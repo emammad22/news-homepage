@@ -22,12 +22,30 @@
 .header-inner .burger-menu {
     display: none;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
 
-.header-inner .burger-menu div {
+.header-inner .burger-menu div,
+.burger-bar {
     width: 45px;
     border: 1px solid black;
     margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.header-inner .burger-menu .burger-bar:first-child {
+    transform: rotate(31deg);
+    transform-origin: left;
+}
+
+.header-inner .burger-menu .burger-bar:last-child {
+    transform: rotate(-31deg);
+    transform-origin: left;
+}
+
+.header-inner .burger-menu .burger-bar:nth-child(2) {
+    opacity: 0;
 }
 
 @media screen and (max-width: 570px) {
@@ -40,6 +58,34 @@
     }
 }
 
+.header-inner .sidebar {
+    width: 256px;
+    background: #fffdfa;
+    border: 1px solid transparent;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 144px 24px;
+    transition: all 0.5s ease;
+
+    
+}
+
+.header-inner .open {
+    transform: translateX(400px);
+    transition: all 0.5s ease;
+}
+
+.header-inner .sidebar a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #00001a;
+    font-weight: 400;
+}
 /* header css end */
 
 /* main css begin */
@@ -98,10 +144,9 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-
 }
 
-.main-left--about .main-left--text .text-btn::before{
+.main-left--about .main-left--text .text-btn::before {
     content: "";
     position: absolute;
     top: 0;
@@ -109,19 +154,19 @@
     transform: translateX(-185px);
     width: 185px;
     height: 48px;
-    background-color: #00001A;
+    background-color: #00001a;
     z-index: -1;
 }
 
-.main-left--about .main-left--text .text-btn:hover::before{
+.main-left--about .main-left--text .text-btn:hover::before {
     animation: btn-animation 0.5s ease-in-out forwards;
 }
 
-@keyframes btn-animation{
-    0%{
+@keyframes btn-animation {
+    0% {
         transform: translateX(-185px);
     }
-    100%{
+    100% {
         transform: translateX(0);
     }
 }
