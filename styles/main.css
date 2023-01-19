@@ -22,8 +22,10 @@
 .header-inner .burger-menu {
     display: none;
     cursor: pointer;
-    position: relative;
-    z-index: 1;
+    position: fixed;
+    top: 18px;
+    right: 20px;
+    z-index: 99;
 }
 
 .header-inner .burger-menu div,
@@ -56,23 +58,28 @@
     .header-inner .header-menu {
         display: none;
     }
+
+    .header-inner .sidebar {
+        width: 256px;
+        background: #fffdfa;
+        border: 1px solid transparent;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 144px 24px;
+        transition: all 0.5s ease;
+        visibility: visible;
+    }
 }
 
-.header-inner .sidebar {
-    width: 256px;
-    background: #fffdfa;
-    border: 1px solid transparent;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding: 144px 24px;
-    transition: all 0.5s ease;
-
-    
+@media screen and (min-width:570px) {
+    .header-inner .sidebar{
+        display: none;
+    }
 }
 
 .header-inner .open {
@@ -86,12 +93,15 @@
     color: #00001a;
     font-weight: 400;
 }
+
+
 /* header css end */
 
 /* main css begin */
 
 .main {
     margin-bottom: 68px;
+    z-index: -99;
 }
 
 .main-inner {
@@ -107,6 +117,8 @@
 
 .main-inner .main-left {
     flex-basis: 60%;
+    /* z-index: -99; */
+
 }
 
 .main-inner .main-left img {
@@ -155,7 +167,7 @@
     width: 185px;
     height: 48px;
     background-color: #00001a;
-    z-index: -1;
+    z-index: -99;
 }
 
 .main-left--about .main-left--text .text-btn:hover::before {
@@ -229,6 +241,8 @@
 .footer-inner .footgrp {
     display: flex;
     gap: 20px;
+    z-index: -99;
+
 }
 
 .footer-inner {
