@@ -1,0 +1,232 @@
+/* header css begin */
+
+.header .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.header-inner .header-menu a {
+    display: inline-block;
+    text-decoration: none;
+    color: #5e607a;
+    font-size: 15px;
+    margin-left: 40px;
+    transition: color 0.5s;
+}
+
+.header-inner .header-menu a:hover {
+    color: #f15d51;
+}
+.header-inner .burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.header-inner .burger-menu div {
+    width: 45px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 570px) {
+    .header-inner .burger-menu {
+        display: block;
+    }
+
+    .header-inner .header-menu {
+        display: none;
+    }
+}
+
+/* header css end */
+
+/* main css begin */
+
+.main {
+    margin-bottom: 68px;
+}
+
+.main-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.main-inner .main-right {
+    flex-basis: 30%;
+    border: 1px solid black;
+}
+
+.main-inner .main-left {
+    flex-basis: 60%;
+}
+
+.main-inner .main-left img {
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.main-left--about {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-inner .main-left--about .main-header {
+    font-size: 56px;
+    font-weight: 800;
+    margin: 0;
+    flex-basis: 40%;
+}
+
+.main-left--about .main-left--text {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 55%;
+    justify-content: space-between;
+}
+
+.main-left--about .main-left--text .text-btn {
+    width: 185px;
+    height: 48px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    background: #f15d51;
+    border: none;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+}
+
+.main-left--about .main-left--text .text-btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-185px);
+    width: 185px;
+    height: 48px;
+    background-color: #00001A;
+    z-index: -1;
+}
+
+.main-left--about .main-left--text .text-btn:hover::before{
+    animation: btn-animation 0.5s ease-in-out forwards;
+}
+
+@keyframes btn-animation{
+    0%{
+        transform: translateX(-185px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.main-left--about .main-left--text .text {
+    line-height: 26px;
+    color: #5e607a;
+    font-size: 15px;
+}
+
+.main-right {
+    background: #00001a;
+    padding: 24px 32px;
+}
+
+.main-right .right-header {
+    color: #e9aa52;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.main-right h3 {
+    font-weight: 800;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.main-right p {
+    color: #c5c6ce;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.main-right .new-group {
+    border-bottom: 1px solid #5e607a;
+}
+
+@media screen and (max-width: 570px) {
+    .main-inner {
+        flex-direction: column;
+        flex-basis: 100%;
+    }
+
+    .main-inner .main-left--about {
+        flex-direction: column;
+        flex-basis: 100%;
+    }
+}
+
+/* main css end */
+
+/* footer css begin */
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-inner .footgrp {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-inner {
+    counter-reset: section;
+}
+
+.footgrp {
+    counter-increment: section;
+    position: relative;
+    flex-basis: 34%;
+}
+
+.footgrp .textgrp {
+    margin: 0;
+}
+
+.footgrp .headgrp {
+    margin: 0;
+    padding-top: 38px;
+}
+
+.footgrp .first-about,
+.footgrp .second-about,
+.footgrp .third-about {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.footgrp::before {
+    content: counter(section, decimal-leading-zero);
+    position: absolute;
+    top: -7px;
+    padding-bottom: 20px;
+    left: 119px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #c5c6ce;
+}
+
+@media screen and (max-width: 570px) {
+    .footer-inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+/* footer css end */
