@@ -22,10 +22,13 @@
 .header-inner .burger-menu {
     display: none;
     cursor: pointer;
+    z-index: 99;
+}
+
+.header-inner .fixedBurger{
     position: fixed;
     top: 18px;
     right: 20px;
-    z-index: 99;
 }
 
 .header-inner .burger-menu div,
@@ -59,7 +62,7 @@
         display: none;
     }
 
-    .header-inner .sidebar {
+    .sidebar {
         width: 256px;
         background: #fffdfa;
         border: 1px solid transparent;
@@ -73,27 +76,28 @@
         padding: 144px 24px;
         transition: all 0.5s ease;
         visibility: visible;
+        z-index: 1;
     }
 }
 
-@media screen and (min-width:570px) {
-    .header-inner .sidebar{
+@media screen and (min-width: 570px) {
+     .sidebar {
         display: none;
     }
 }
 
-.header-inner .open {
+.open {
     transform: translateX(400px);
     transition: all 0.5s ease;
+    z-index: 0;
 }
 
-.header-inner .sidebar a {
+.sidebar a {
     text-decoration: none;
     font-size: 18px;
     color: #00001a;
     font-weight: 400;
 }
-
 
 /* header css end */
 
@@ -101,7 +105,6 @@
 
 .main {
     margin-bottom: 68px;
-    z-index: -99;
 }
 
 .main-inner {
@@ -117,8 +120,6 @@
 
 .main-inner .main-left {
     flex-basis: 60%;
-    /* z-index: -99; */
-
 }
 
 .main-inner .main-left img {
@@ -143,6 +144,7 @@
     flex-direction: column;
     flex-basis: 55%;
     justify-content: space-between;
+
 }
 
 .main-left--about .main-left--text .text-btn {
@@ -155,7 +157,7 @@
     color: #fff;
     position: relative;
     overflow: hidden;
-    z-index: 1;
+    z-index: 0;
 }
 
 .main-left--about .main-left--text .text-btn::before {
@@ -167,7 +169,7 @@
     width: 185px;
     height: 48px;
     background-color: #00001a;
-    z-index: -99;
+    z-index: -1;
 }
 
 .main-left--about .main-left--text .text-btn:hover::before {
@@ -242,7 +244,6 @@
     display: flex;
     gap: 20px;
     z-index: -99;
-
 }
 
 .footer-inner {

@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 30px 0;
     overflow-x: hidden;
-    z-index: 0;
+    z-index: -99;
 }
 
 .container {
@@ -14,7 +14,5 @@ body {
 @media screen and (max-width: 570px) {
     body {
         padding: 15px 25px;
-        /* overflow-x: hidden; */
-        /* overflow-y: visible; */
     }
 }
